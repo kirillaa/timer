@@ -13,7 +13,7 @@ input.onButtonPressed(Button.B, function () {
 input.onLogoEvent(TouchButtonEvent.Touched, function () {
     basic.showString("Timer")
     basic.showString("" + timer + "hr.")
-    set_time = timer * 3600000
+    set_time = timer * 3600
     led.setBrightness(50)
     basic.showLeds(`
         # # # # #
@@ -31,6 +31,8 @@ input.onLogoEvent(TouchButtonEvent.Touched, function () {
             y = y + 1
         }
     }
+    x = 0
+    y = 0
     music.startMelody(music.builtInMelody(Melodies.Ringtone), MelodyOptions.Once)
     basic.showString("Time to eat")
     music.stopAllSounds()
